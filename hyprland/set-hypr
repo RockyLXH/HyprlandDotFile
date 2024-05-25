@@ -34,7 +34,6 @@ install_stage=(
     bluez-utils
     blueman
     # Chinese input method
-    fcitx5-im
     fcitx5-chinese-addons
     fcitx5-material-color
     # Intel GPU driver
@@ -177,6 +176,8 @@ fi
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the packages? (y,n) ' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
 
+    yay -S fcitx5-im
+
     echo -e "$CNT - Installing packages & softwares, this may take a while..."
     for SOFTWR in ${install_stage[@]}; do
         install_software $SOFTWR 
@@ -194,19 +195,33 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 fi
 
 ### Install Sddm theme
+echo -e "$CNT - Installing SDDM theme..."
 sudo git clone https://github.com/Keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts
 sudo cp ~/dotfiles/hyprland/sddm/sddm.conf /etc/sddm.conf
 sudo cp ~/dotfiles/hyprland/sddm/theme.conf /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+echo -e "$CNT - Sddm theme installation completed."
 
 ### Copy Monaco nerd fonts
+echo -e "$CNT - Copying Monaco nerd fonts..."
 sudo cp ~/dotfiles/hyprland/MonacoFonts/* /usr/share/fonts
+echo -e "$CNT - Monaco nerd fonts installation completed."
 
 # Setup configs
+echo -e "$CNT - Setting up config files..."
 ln -s ~/dotfiles/hyprland/hypr ~/.config
 ln -s ~/dotfiles/hyprland/mako ~/.config
 ln -s ~/dotfiles/hyprland/rofi ~/.config
 ln -s ~/dotfiles/hyprland/waybar ~/.config
+ln -s ~/dotfiles/hyprland/kitty ~/.config
+ln -s ~/dotfiles/hyprland/fish ~/.config
+ln -s ~/dotfiles/hyprland/hyprlock ~/.config
+ln -s ~/dotfiles/hyprland/starship.toml ~/.config
+ln -s ~/dotfiles/hyprland/hyprlock.conf ~/.config
+echo -e "$CNT - Config files setup completed."
+
+### Change wallpaper script to exectuable 
+chmod +x ~/dotfiles/hyprland/hypr/conf.d/bgaction
 
 ### Disable wifi powersave mode ###
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to disable WiFi powersave? (y,n) ' WIFI

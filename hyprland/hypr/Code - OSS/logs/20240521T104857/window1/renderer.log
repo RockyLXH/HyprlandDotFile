@@ -1,8 +1,0 @@
-2024-05-21 10:48:59.563 [info] Started local extension host with pid 32928.
-2024-05-21 10:49:03.220 [info] [perf] Render performance baseline is 52ms
-2024-05-21 10:50:18.738 [warning] [lifecycle] onBeforeShutdown is taking a long time, pending operations: veto.backups
-2024-05-21 10:50:27.608 [info] [lifecycle]: Shutdown was prevented by final veto (id: veto.backups)
-2024-05-21 10:51:09.493 [warning] [lifecycle] onBeforeShutdown is taking a long time, pending operations: veto.backups
-2024-05-21 10:51:12.042 [warning] [backup tracker] suspended, ignoring dirty change event file:///home/rocky/dotfiles/hyprland/hypr/conf.d/keybind.conf 
-2024-05-21 10:51:14.214 [info] Started local extension host with pid 33387.
-2024-05-21 10:51:17.960 [info] [perf] Render performance baseline is 97ms
