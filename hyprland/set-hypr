@@ -1,12 +1,13 @@
 #!/bin/bash
 
 #the main packages
-install_stage_pacman=(
+install_stage=(
     # Basic softwares
-    hyperland
+    hyprland
     hyprlock
     waybar
     mako
+    rofi-lbonn-wayland-git
     xorg-xwayland
     # Terminal
     kitty
@@ -65,16 +66,12 @@ install_stage_pacman=(
     # Others
     btop
     code
+    # Auto mount flash disk
+    udev-media-automount
     # Sddm theme
     qt6-5compat
     qt6-declarative
     qt6-svg
-)
-
-install_stage_yay=(
-    rofi-lbonn-wayland-git
-    # Auto mount flash disk
-    udev-media-automount
 )
 
 for str in ${myArray[@]}; do
@@ -105,7 +102,7 @@ show_progress() {
 }
 
 # function that will test for a package and if not found it will attempt to install it
-yay_install_software() {
+install_software() {
     # First lets see if the package is there
     if yay -Q $1 &>> /dev/null ; then
         echo -e "$COK - $1 is already installed."
@@ -125,25 +122,6 @@ yay_install_software() {
     fi
 }
 
-pacman_install_software() {
-    # First lets see if the package is there
-    if sudo pacman -Q $1 &>> /dev/null ; then
-        echo -e "$COK - $1 is already installed."
-    else
-        # no package found so installing
-        echo -en "$CNT - Now installing $1 ."
-        sudo pacman -S --noconfirm $1 &>> $INSTLOG &
-        show_progress $!
-        # test to make sure package installed
-        if sudo pacman -Q $1 &>> /dev/null ; then
-            echo -e "\e[1A\e[K$COK - $1 was installed."
-        else
-            # if this is hit then a package is missing, exit to review log
-            echo -e "\e[1A\e[K$CER - $1 install had failed, please check the install.log"
-            exit
-        fi
-    fi
-}
 # clear the screen
 clear
 
@@ -200,13 +178,10 @@ read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the packages? (y,n
 if [[ $INST == "Y" || $INST == "y" ]]; then
 
     echo -e "$CNT - Installing packages & softwares, this may take a while..."
-    for SOFTWR in ${install_stage_pacman[@]}; do
-        pacman_install_software $SOFTWR 
+    for SOFTWR in ${install_stage[@]}; do
+        install_software $SOFTWR 
     done
 
-    for SOFTWR in ${install_stage_yay[@]}; do
-        yay_pacman_install_software $SOFTWR 
-    done
     # Start the bluetooth service
     echo -e "$CNT - Starting the Bluetooth Service..."
     sudo systemctl enable --now bluetooth &>> $INSTLOG
