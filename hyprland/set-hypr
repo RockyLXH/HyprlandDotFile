@@ -11,6 +11,7 @@ install_stage=(
     xorg-xwayland
     # Terminal
     kitty
+    fish
     # Network manager
     nm-connection-editor
     # Boswer
@@ -222,6 +223,9 @@ echo -e "$CNT - Config files setup completed."
 
 ### Change wallpaper script to exectuable 
 chmod +x ~/dotfiles/hyprland/hypr/conf.d/bgaction
+
+### Change shell to fishell
+chsh -s /usr/bin/fish
 
 ### Disable wifi powersave mode ###
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to disable WiFi powersave? (y,n) ' WIFI
