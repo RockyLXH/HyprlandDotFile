@@ -36,6 +36,10 @@ install_stage=(
     bluez-utils
     blueman
     # Chinese input method
+    fcitx5
+    fcitx5-configtool
+    fcitx5-gtk
+    fcitx5-qt
     fcitx5-chinese-addons
     fcitx5-material-color
     # Intel GPU driver
@@ -177,8 +181,6 @@ fi
 ### Install all of the above pacakges ####
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the packages? (y,n) ' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
-
-    yay -S fcitx5-im
 
     echo -e "$CNT - Installing packages & softwares, this may take a while..."
     for SOFTWR in ${install_stage[@]}; do
