@@ -218,6 +218,7 @@ ln -s ~/dotfiles/hyprland/waybar ~/.config
 ln -s ~/dotfiles/hyprland/kitty ~/.config
 ln -s ~/dotfiles/hyprland/fish ~/.config
 ln -s ~/dotfiles/hyprland/starship.toml ~/.config
+cp .vimrc ~/
 echo -e "$CNT - Config files setup completed."
 
 ### Change wallpaper script to exectuable 
