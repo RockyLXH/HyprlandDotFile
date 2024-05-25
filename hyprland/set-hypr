@@ -68,6 +68,10 @@ install_stage=(
     code
     # Auto mount flash disk
     udev-media-automount
+    # Sddm theme
+    qt6-5compat
+    qt6-declarative
+    qt6-svg
 )
 
 for str in ${myArray[@]}; do
@@ -209,6 +213,15 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     sudo systemctl enable sddm &>> $INSTLOG
     sleep 2
 fi
+
+### Install Sddm theme
+sudo git clone https://github.com/Keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
+sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts
+sudo cp ~/dotfiles/hyprland/sddm/sddm.conf /etc/sddm.conf
+sudo cp ~/dotfiles/hyprland/sddm/theme.conf /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+
+### Copy Monaco nerd fonts
+sudo cp ~/dotfiles/hyprland/MonacoFonts/* /usr/share/fonts
 
 # Setup configs
 ln -s ~/dotfiles/hyprland/hypr ~/.config
