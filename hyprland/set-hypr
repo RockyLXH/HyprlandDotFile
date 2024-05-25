@@ -12,6 +12,7 @@ install_stage=(
     # Terminal
     kitty
     fish
+    starship
     # Network manager
     nm-connection-editor
     # Boswer
