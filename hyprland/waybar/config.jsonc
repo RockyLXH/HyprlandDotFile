@@ -60,7 +60,7 @@
         "format": "󰋊 {percentage_used}%",
         "path": "/home",
         "tooltip": true,
-        "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+        "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)"
     },
 
     "network": {
