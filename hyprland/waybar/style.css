@@ -22,6 +22,7 @@ window#waybar.hidden {
 #clock,
 #cpu,
 #memory,
+#disk,
 #network,
 #pulseaudio,
 #tray,
@@ -103,6 +104,11 @@ window#waybar.hidden {
 
 #memory {
     background-color: #FFEAAA;
+    color: #000000;
+}
+
+#disk {
+    background-color: #7bdbb3;
     color: #000000;
 }
 

@@ -5,7 +5,7 @@
     "spacing": 6,
     "modules-left": ["hyprland/window"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "bluetooth", "network", "pulseaudio", "memory", "cpu", "clock"],
+    "modules-right": ["tray", "bluetooth", "network", "pulseaudio", "disk", "memory", "cpu", "clock"],
     "hyprland/workspaces": {
         "format": "{name}",
         "persistent-workspaces": {
@@ -53,6 +53,14 @@
         "format": "󰍛 {used:0.01}G",
         "tooltip": true,
         "tooltip-format": "RAM: {used:0.01}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/home",
+        "tooltip": true,
+        "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
     },
 
     "network": {
