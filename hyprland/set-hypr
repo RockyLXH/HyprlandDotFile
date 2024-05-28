@@ -70,13 +70,15 @@ install_stage=(
     swww
     # Others
     btop
-    code
     # Auto mount flash disk
     udev-media-automount
     # Sddm theme
     qt6-5compat
     qt6-declarative
     qt6-svg
+    # Wps office
+    wps-office
+    ttf-wps-fonts
 )
 
 for str in ${myArray[@]}; do
