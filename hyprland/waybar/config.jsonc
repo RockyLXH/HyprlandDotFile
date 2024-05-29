@@ -50,9 +50,9 @@
 
     "memory": {
         "interval": 1,
-        "format": "󰍛 {used:0.01}G",
+        "format": "󰍛 {used:0.01}G/{total}G",
         "tooltip": true,
-        "tooltip-format": "RAM: {used:0.01}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G"
+        "tooltip-format": "Swap: {swapUsed}G / {swapTotal}G"
     },
 
     "disk": {

@@ -71,14 +71,13 @@ install_stage=(
     # Others
     btop
     # Auto mount flash disk
-    udev-media-automount
+    udiskie
     # Sddm theme
     qt6-5compat
     qt6-declarative
     qt6-svg
-    # Wps office
-    wps-office
-    ttf-wps-fonts
+    # Libre office suit
+    libreoffice-still
 )
 
 for str in ${myArray[@]}; do
