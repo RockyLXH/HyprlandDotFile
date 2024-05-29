@@ -3,9 +3,9 @@
     "position": "top", 
     "height": 36, 
     "spacing": 6,
-    "modules-left": ["hyprland/window"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "bluetooth", "network", "pulseaudio", "disk", "memory", "cpu", "clock"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "pulseaudio", "disk", "memory", "cpu", "bluetooth", "tray"],
     "hyprland/workspaces": {
         "format": "{name}",
         "persistent-workspaces": {
@@ -43,14 +43,14 @@
     },
 
     "cpu": {
-        "interval": 1,
+        "interval": 2,
         "format": "\uf2db {usage:2}%",
         "tooltip": true
     },
 
     "memory": {
-        "interval": 1,
-        "format": "󰍛 {used:0.01}G/{total}G",
+        "interval": 2,
+        "format": "󰍛 {used:0.1f}G/{total}G",
         "tooltip": true,
         "tooltip-format": "Swap: {swapUsed}G / {swapTotal}G"
     },
@@ -65,7 +65,7 @@
 
     "network": {
         "interval": 1,
-        "format-wifi": "\uf1eb {essid} ({signalStrength}%)",
+        "format-wifi": "\uf1eb {essid}({signalStrength}%) \uf175{bandwidthDownBytes} \uf176{bandwidthUpBytes}",
         "format-ethernet": "󰀂 {ipaddr}/{cidr}",
         "format-linked": "\uf059 No IP ({ifname})",
         "format-disconnected": "󰀂 Disconnected",

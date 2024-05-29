@@ -78,6 +78,10 @@ install_stage=(
     qt6-svg
     # Libre office suit
     libreoffice-still
+    # Calculator
+    qalculator-qt
+    # Music player
+    yesplaymusic
 )
 
 for str in ${myArray[@]}; do
