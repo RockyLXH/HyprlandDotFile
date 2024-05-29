@@ -228,7 +228,7 @@ ln -s ~/dotfiles/hyprland/starship.toml ~/.config
 cp .vimrc ~/
 echo -e "$CNT - Config files setup completed."
 
-### Change wallpaper script to exectuable 
+### Change script to exectuable 
 chmod +x ~/dotfiles/hyprland/hypr/conf.d/bgaction
 chmod +x ~/dotfiles/hyprland/rofi/bin/*
 chmod +x ~/dotfiles/hyprland/hypr/hyprlock/*
