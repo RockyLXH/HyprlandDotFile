@@ -225,7 +225,7 @@ ln -s ~/dotfiles/hyprland/waybar ~/.config
 ln -s ~/dotfiles/hyprland/kitty ~/.config
 ln -s ~/dotfiles/hyprland/fish ~/.config
 ln -s ~/dotfiles/hyprland/starship.toml ~/.config
-cp .vimrc ~/
+ln -s ~/dotfiles/hyprland/.vimrc ~/
 echo -e "$CNT - Config files setup completed."
 
 ### Change script to exectuable 
