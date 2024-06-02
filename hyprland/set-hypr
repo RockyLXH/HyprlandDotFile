@@ -43,7 +43,6 @@ install_stage=(
     fcitx5-chinese-addons
     fcitx5-material-color
     # Intel GPU driver
-    mesa
     lib32-mesa
     vulkan-intel
     lib32-vulkan-intel
@@ -79,7 +78,7 @@ install_stage=(
     # Libre office suit
     libreoffice-still
     # Calculator
-    qalculator-qt
+    qalculate-qt
     # Music player
     yesplaymusic
 )
