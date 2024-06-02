@@ -9,6 +9,7 @@ install_stage=(
     mako
     rofi-lbonn-wayland-git
     xorg-xwayland
+    openssh
     # Terminal
     kitty
     fish
@@ -196,7 +197,12 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     sudo systemctl enable --now bluetooth &>> $INSTLOG
     sleep 2
 
-    # Enable the sddm login manager service
+    # Start the SSH service
+    echo -e "$CNT - Starting the SSH Service..."
+    sudo systemctl enable sshd &>> $INSTLOG
+    sleep 2
+
+   # Enable the sddm login manager service
     echo -e "$CNT - Enabling the SDDM Service..."
     sudo systemctl enable sddm &>> $INSTLOG
     sleep 2
