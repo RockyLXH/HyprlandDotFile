@@ -82,6 +82,8 @@ install_stage=(
     qalculate-qt
     # Music player
     yesplaymusic
+    # File share
+    samba
 )
 
 for str in ${myArray[@]}; do
@@ -220,6 +222,16 @@ echo -e "$CNT - Sddm theme installation completed."
 echo -e "$CNT - Copying Monaco nerd fonts..."
 sudo cp ~/dotfiles/hyprland/MonacoFonts/* /usr/share/fonts
 echo -e "$CNT - Monaco nerd fonts installation completed."
+
+### Copy samba configure file
+echo -e "$CNT - Copying smb.conf..."
+sudo cp ~/dotfiles/hyprland/samba/smb.conf /etc/samba/
+echo -e "$CNT - Done"
+
+# Start the Samba service
+echo -e "$CNT - Starting the Samba Service..."
+sudo systemctl enable smb.service nmb.service &>> $INSTLOG
+sleep 2
 
 # Setup configs
 echo -e "$CNT - Setting up config files..."
