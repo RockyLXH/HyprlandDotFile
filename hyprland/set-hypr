@@ -228,6 +228,9 @@ echo -e "$CNT - Copying smb.conf..."
 sudo cp ~/dotfiles/hyprland/samba/smb.conf /etc/samba/
 echo -e "$CNT - Done"
 
+### add user to samba
+pdbedit -a rocky
+
 # Start the Samba service
 echo -e "$CNT - Starting the Samba Service..."
 sudo systemctl enable smb.service nmb.service &>> $INSTLOG

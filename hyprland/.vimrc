@@ -12,6 +12,7 @@ syntax on
 highlight Error NONE
 
 call plug#begin()
+Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', {'do': { -> fzf#install()}}
 Plug 'vim-airline/vim-airline'
