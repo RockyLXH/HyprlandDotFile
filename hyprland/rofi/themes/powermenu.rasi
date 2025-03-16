@@ -1,5 +1,6 @@
 * {
-    font: "Monaco Nerd Font 14";
+    font: "Source Code Pro 16";
+    // font: "Monaco Nerd Font 14";
 
     accent: #b4befe;
 
