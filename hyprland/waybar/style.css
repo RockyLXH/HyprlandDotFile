@@ -1,9 +1,10 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: Monaco Nerd Font; */
-    font-family: Source Code Pro; 
+    /* font-family: Source Code Pro; */ 
+    font-family: NotoSansM NF;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
 
     border-radius: 18px;
     text-shadow: none;
