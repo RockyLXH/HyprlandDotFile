@@ -1,33 +1,40 @@
 set nocompatible nosmartindent autoindent noincsearch title ruler
 set modeline modelines=6 laststatus=0
 set fileencodings=utf-8
+set encoding=utf-8
 set number relativenumber
-
-"set wildmenu
-"set wildmode=list:longest,full
-"set jumpoptions=stack
+set background=dark
+set cursorline 
 
 filetype plugin on
 syntax on
 highlight Error NONE
 
 call plug#begin()
-Plug 'tpope/vim-commentary'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', {'do': { -> fzf#install()}}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-commentary'
+Plug 'base16-community/base16-vim'
 call plug#end()
 
+let mapleader=" "
+nnoremap <Tab> <C-W>w
+map <leader>x :split<CR>
+map <leader>v :vsplit<CR>
 inoremap jj <esc>
-nnoremap <space>f :FZF<cr>
-nmap <space>d <Plug>(coc-definition)
-nmap <space>r <Plug>(coc-references)
-nmap <space>t <Plug>(coc-type-definition)
-nmap <space>i <Plug>(coc-implementation)
-nmap <space>p <Plug>(coc-foramt)
+nnoremap <leader>f :FZF<cr>
+nmap <leader>d <Plug>(coc-definition)
+nmap <leader>r <Plug>(coc-references)
+nmap <leader>t <Plug>(coc-type-definition)
+nmap <leader>i <Plug>(coc-implementation)
+nmap <leader>p <Plug>(coc-foramt)
 nnoremap <F2> :bprevious<cr>
 nnoremap <F3> :bnext<cr>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+set termguicolors
+let base16_colorspace=256
+colorscheme base16-gruvbox-dark-hard
