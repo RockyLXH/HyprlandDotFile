@@ -1,3 +1,13 @@
+format = '$time $all'
+
+[cmd_duration]
+style = 'yellow'
+
+[time]
+disabled = false
+format = '\[$time\]()'
+time_format = '%R'
+
 [character]
 success_symbol = "[|](bold red)"
 error_symbol = "[x](bold red)"
@@ -5,6 +15,7 @@ vimcmd_symbol = "[<](bold red)"
 
 [git_commit]
 tag_symbol = " tag "
+style = 'green'
 
 [git_status]
 ahead = ">"
@@ -12,6 +23,7 @@ behind = "<"
 diverged = "<>"
 renamed = "r"
 deleted = "x"
+style = 'red'
 
 [aws]
 symbol = "aws "
@@ -27,6 +39,8 @@ symbol = "bun "
 
 [c]
 symbol = "C "
+detect_extensions = ['c', 'h', 'cpp', 'hpp']
+style = '149'
 
 [cobol]
 symbol = "cobol "
@@ -39,6 +53,7 @@ symbol = "cr "
 
 [cmake]
 symbol = "cmake "
+style = 'blue'
 
 [daml]
 symbol = "daml "
@@ -54,9 +69,11 @@ symbol = ".NET "
 
 [directory]
 read_only = " ro"
+style = 'cyan'
 
 [docker_context]
 symbol = "docker "
+style = 'blue'
 
 [elixir]
 symbol = "exs "
@@ -75,6 +92,7 @@ symbol = "gcp "
 
 [git_branch]
 symbol = "git "
+style = 'purple'
 
 [gleam]
 symbol = "gleam "
@@ -199,6 +217,7 @@ symbol = "purs "
 
 [python]
 symbol = "py "
+style = 'yellow'
 
 [quarto]
 symbol = "quarto "
@@ -211,6 +230,7 @@ symbol = "rb "
 
 [rust]
 symbol = "rs "
+style = 'red'
 
 [scala]
 symbol = "scala "
