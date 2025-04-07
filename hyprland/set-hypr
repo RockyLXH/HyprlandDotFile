@@ -76,14 +76,14 @@ install_stage=(
     qt6-5compat
     qt6-declarative
     qt6-svg
-    # Libre office suit
-    libreoffice-still
     # Calculator
     qalculate-qt
     # Music player
     yesplaymusic
     # File share
     samba
+    # useful tools
+    eza
 )
 
 for str in ${myArray[@]}; do
