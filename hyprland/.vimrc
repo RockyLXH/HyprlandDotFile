@@ -1,17 +1,18 @@
-set nocompatible nosmartindent autoindent noincsearch title ruler
+set nocompatible smartindent autoindent noincsearch title ruler
 set modeline modelines=6 laststatus=0
 set fileencodings=utf-8
 set encoding=utf-8
 set number relativenumber
 set background=dark
 set cursorline 
+set shiftwidth=4 tabstop=4
 
 filetype plugin on
 syntax on
 highlight Error NONE
 
 call plug#begin()
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', {'do': { -> fzf#install()}}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
